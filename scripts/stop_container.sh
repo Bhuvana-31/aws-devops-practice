@@ -8,5 +8,8 @@
 #!/bin/bash
 set -e
 
-sudo docker stop $(sudo docker ps -q) || true
-sudo docker rm $(sudo docker ps -aq) || true
+CONTAINER_ID=$`sudo docker ps | awk -F " " '{print $1}'`
+
+docker stop $CONTAINER_ID
+
+docker rm $CONTAINER_ID
