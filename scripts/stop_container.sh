@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
-# Stop the running container
-sudo docker stop $(sudo docker ps -q) || true 
+CONTAINER="flask-app"
 
-# Removes all container
-sudo docker rm $(sudo docker ps -aq) || true
+echo "Stopping container if running..."
+docker stop $CONTAINER || true
+
+echo "Removing container if exists..."
+docker rm -f $CONTAINER || true
