@@ -1,6 +1,12 @@
+# #!/bin/bash
+# set -e
+
+# # Stop the running container (if any)
+# echo "Hi"
+
+
 #!/bin/bash
 set -e
 
-
-# Stop the running container (if any)
-echo "Hi"
+docker stop $(docker ps -q) || true
+docker rm $(docker ps -aq) || true
