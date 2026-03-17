@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-
 # pull the docker image from docker hub
 docker pull bhuvana31/simple-python-flask-project:latest
 
