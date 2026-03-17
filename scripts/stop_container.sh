@@ -8,5 +8,5 @@
 #!/bin/bash
 set -e
 
-docker stop $(docker ps -q) || true
-docker rm $(docker ps -aq) || true
+sudo docker stop $(sudo docker ps -q) || true
+sudo docker rm $(sudo docker ps -aq) || true
